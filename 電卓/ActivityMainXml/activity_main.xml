@@ -5,23 +5,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <TextView
-        android:id="@+id/input"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginTop="100dp"
-        android:text="@string/input"
-        android:textSize="25dp"
         >
-    </TextView>
-    <TextView
-        android:id="@+id/result"
+        <TextView
+            android:id="@+id/sikiText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 式 ："
+            android:textSize="25sp"
+            android:background="#ffffff" />
+        <TextView
+            android:id="@+id/inputDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/result"
-        android:textSize="25dp"
+        android:orientation="horizontal"
         >
-    </TextView>
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result_display"
+            android:textSize="25sp"
+            android:background="#ffffff"
+            />
+        <TextView
+            android:id="@+id/resultDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            />
+    </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,15 +52,17 @@
             <Button
                 android:id="@+id/btClear"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/bv_clear"
-                android:textSize="25dp"/>
+                android:textSize="25dp"
+                android:background="#C0C0C0"/>
             <Button
                 android:id="@+id/btRoot"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:background="#C0C0C0"
                 android:text="@string/bv_root"
                 android:textSize="25dp"/>
             <Button
@@ -46,13 +70,16 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:background="#C0C0C0"
                 android:text="@string/bv_percent"
                 android:textSize="25dp"/>
+
             <Button
                 android:id="@+id/btDivision"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
                 android:text="@string/bv_division"
                 android:textSize="25dp" />
         </TableRow>

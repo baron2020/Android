@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <string name="app_name">電卓</string>
-    <string name="input">式：</string>
-    <string name="result">結果：</string>
+    <string name="input_display">""</string>
+    <string name="result_display">結果：</string>
     <string name="bv_1">1</string>
     <string name="bv_2">2</string>
     <string name="bv_3">3</string>
