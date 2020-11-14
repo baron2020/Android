@@ -6,25 +6,40 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-public class Test {
-    private int startTime;
-    Test(){
-        this.startTime=MainActivity.remainingTime;
+public class Timer extends CountDownTimer {
+    private TextView wt;//白タイマー
+    private TextView bt;//黒タイマー
+    private String target;//白？黒？
+    SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss", Locale.US);//残り時間を分,秒で表示
+
+    public Timer(long millisInFuture, long countDownInterval, TextView wt, TextView bt, String target) {
+        super(millisInFuture, countDownInterval);
+        this.target = target;
+        this.wt = wt;
+        this.bt = bt;
     }
-    public void play(TextView textTimer){
-        MainActivity.cdt = new CountDownTimer(this.startTime, 100) {
-            //第一引数：10000(10秒),第二引数：100(0.1秒)おきに実行される
-            SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss", Locale.US);//残り時間を分,秒で表示
-            @Override
-            public void onTick(long millisUntilFinished) {
-                String diaplayDataTime=dateFormat.format(millisUntilFinished);
-                textTimer.setText(diaplayDataTime);
-                MainActivity.remainingTime=(int)millisUntilFinished;
-            }
-            @Override
-            public void onFinish() {
-                textTimer.setText("End");
-            }
-        };
+
+    @Override
+    public void onTick(long millisUntilFinished) {
+        String diaplayDataTime = dateFormat.format(millisUntilFinished);
+        if (this.target.equals("w")) {
+            MainActivity.whiteTime1 = (int) millisUntilFinished;
+            MainActivity.whiteTime2 = (long) millisUntilFinished;
+            this.wt.setText(diaplayDataTime);
+        } else if (this.target.equals("b")) {
+            MainActivity.blackTime1 = (int) millisUntilFinished;
+            MainActivity.blackTime2 = millisUntilFinished;
+            this.bt.setText(diaplayDataTime);
+        }
+    }
+
+    @Override
+    public void onFinish() {
+        if (this.target.equals("w")) {
+            this.wt.setText("End");
+        } else if (this.target.equals("b")) {
+            this.bt.setText("End");
+        }
     }
 }
+
