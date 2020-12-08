@@ -11,8 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    private CountDownTimer wCdt;//wカウントダウンタイマー
-    private CountDownTimer bCdt;//bカウントダウンタイマー
+    private TimeLimitControl wCdt;//wカウントダウンタイマー
+    private TimeLimitControl bCdt;//bカウントダウンタイマー
     static long whiteTime;//long白時間
     static long blackTime;//long黒時間
     SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss", Locale.US);//残り時間を分,秒で表示
