@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_sky"
+    android:scaleType="centerCrop"
+    android:orientation="vertical">
+    <!--コメント -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ばろんオセロ"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp" />
+    <!--コメント -->
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="対局開始"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:backgroundTint="@null"
+        android:background="@drawable/button_design"
+        android:onClick="startEvent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp" />
+    <!--コメント android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"-->
+</LinearLayout>
